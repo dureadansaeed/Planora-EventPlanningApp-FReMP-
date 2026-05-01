@@ -1,0 +1,221 @@
+/* Admin Layout Styles */
+
+.admin-container {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  background: linear-gradient(180deg, #FFF5F7 0%, #FFF0F5 50%, #F5F0FF 100%);
+  font-family: 'Arimo', sans-serif;
+}
+
+.admin-sidebar {
+  width: 280px;
+  height: 100vh;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  padding: 20px 0;
+  position: fixed;
+  left: 0;
+  top: 0;
+  z-index: 20;
+  transition: transform 0.3s ease-in-out;
+}
+
+.admin-sidebar-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 15;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.admin-sidebar-close-btn {
+  display: none;
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #4A4A4A;
+}
+
+.admin-header {
+  height: 72px;
+  background: rgba(255, 255, 255, 0.97);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  box-shadow: 0 2px 16px rgba(180, 80, 100, 0.08);
+  border-bottom: 1px solid rgba(255, 182, 193, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 0 30px;
+  position: fixed;
+  top: 0;
+  left: 280px;
+  right: 0;
+  z-index: 5;
+  transition: left 0.3s ease-in-out, box-shadow 0.2s ease;
+}
+
+.admin-header-left {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+  min-width: 0;
+}
+
+.admin-header-right {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.admin-header-page-info {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding-left: 20px;
+  border-left: 1px solid rgba(255, 182, 193, 0.3);
+  min-width: 0;
+}
+
+.admin-header-title {
+  font-size: 17px;
+  font-weight: 700;
+  color: #4a4a4a;
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-header-desc {
+  font-size: 12px;
+  color: #7a7a7a;
+  margin: 0;
+  font-family: 'Poppins', system-ui, sans-serif;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Shared logout button — used in both user and admin navbars */
+.btn-logout {
+  display: inline-flex;
+  align-items: center;
+  padding: 7px 20px;
+  border: 1.5px solid #b71c1c;
+  border-radius: 20px;
+  background: transparent;
+  color: #b71c1c;
+  font-size: 13px;
+  font-weight: 600;
+  font-family: 'Poppins', system-ui, sans-serif;
+  cursor: pointer;
+  transition: background 200ms ease, color 200ms ease,
+    box-shadow 200ms ease, transform 200ms ease;
+  white-space: nowrap;
+}
+
+.btn-logout:hover {
+  background: #b71c1c;
+  color: #fff;
+  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.22);
+  transform: translateY(-1px);
+}
+
+.admin-hamburger {
+  display: none;
+  background: none;
+  border: none;
+  font-size: 24px;
+  cursor: pointer;
+  color: #4A4A4A;
+  margin-right: 15px;
+}
+
+.admin-header-left {
+  display: flex;
+  align-items: center;
+}
+
+.admin-main {
+  margin-left: 280px;
+  margin-top: 72px;
+  padding: 30px;
+  box-sizing: border-box;
+  min-height: calc(100vh - 72px);
+  transition: margin-left 0.3s ease-in-out;
+}
+
+/* Grids for Admin Content */
+.admin-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+}
+
+.admin-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+/* Media Queries for Mobile/Tablet Response */
+@media (max-width: 768px) {
+  /* Hide sidebar by sliding it out */
+  .admin-sidebar {
+    transform: translateX(-100%);
+  }
+
+  /* Slide sidebar back in when open */
+  .admin-sidebar.open {
+    transform: translateX(0);
+  }
+
+  .admin-sidebar-overlay.open {
+    display: block;
+  }
+
+  /* Show close button in the sidebar */
+  .admin-sidebar-close-btn {
+    display: block;
+  }
+
+  /* Header stretches fully */
+  .admin-header {
+    left: 0;
+    padding: 0 15px;
+  }
+
+  /* Show hamburger menu */
+  .admin-hamburger {
+    display: block;
+  }
+
+  /* Main content takes full width */
+  .admin-main {
+    margin-left: 0;
+    padding: 15px;
+  }
+
+  /* Stack grids */
+  .admin-grid-2,
+  .admin-grid-3 {
+    grid-template-columns: 1fr;
+    gap: 15px;
+  }
+}

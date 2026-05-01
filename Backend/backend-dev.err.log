@@ -1,0 +1,478 @@
+WARNING: This is a development server. Do not use it in a production deployment. Use a production WSGI server instead.
+ * Running on http://127.0.0.1:5000
+Press CTRL+C to quit
+ * Restarting with stat
+ * Debugger is active!
+ * Debugger PIN: 128-156-184
+C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\jwt\api_jwt.py:153: InsecureKeyLengthWarning: The HMAC key is 18 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  return self._jws.encode(
+127.0.0.1 - - [26/Apr/2026 21:44:53] "POST /api/auth/login HTTP/1.1" 200 -
+C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\jwt\api_jwt.py:371: InsecureKeyLengthWarning: The HMAC key is 18 bytes long, which is below the minimum recommended length of 32 bytes for SHA256. See RFC 7518 Section 3.2.
+  decoded = self.decode_complete(
+127.0.0.1 - - [26/Apr/2026 21:44:54] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:44:54] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:44:59] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:45:00] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:45:00] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:45:00] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:45:23] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:45:23] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:46:07] "PUT /api/bookings/timeslots/69ee3546df42d13c1567fafa HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:46:08] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:47:05] "PUT /api/bookings/timeslots/69ee3546df42d13c1567faf9 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:47:05] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:48:24] "DELETE /api/bookings/timeslots/69ee3546df42d13c1567fafa HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:48:24] "DELETE /api/bookings/timeslots/69ee3546df42d13c1567fafa HTTP/1.1" 404 -
+127.0.0.1 - - [26/Apr/2026 21:48:26] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:48:26] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:48:52] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:48:52] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:49:54] "PUT /api/services/69ad2418b7f2e149e5ae1ff4 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:49:55] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:50:58] "POST /api/services/ HTTP/1.1" 201 -
+127.0.0.1 - - [26/Apr/2026 21:50:59] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:16] "POST /api/services/ HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2763, in run
+    return self._read() if self._is_read else self._write()
+           ~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2908, in _read
+    self._server = self._get_server()
+                   ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2856, in _get_server
+    return self._client._select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 428, in select_server
+    server = self._select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in _select_server
+    servers = self.select_servers(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+    ^
+pymongo.errors.ServerSelectionTimeoutError: ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 69ee35f303836f2e63ad05d7, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\service_routes.py", line 91, in create_service
+    _, error_response, status_code = require_admin()
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\service_routes.py", line 18, in require_admin
+    _, user = get_current_user()
+              ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\service_routes.py", line 13, in get_current_user
+    user = mongo.db.users.find_one({"email": user_email})
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\collection.py", line 1755, in find_one
+    for result in cursor.limit(-1):
+                  ~~~~~~~~~~~~^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1289, in __next__
+    return self.next()
+           ~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1265, in next
+    if len(self._data) or self._refresh():
+                          ~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1213, in _refresh
+    self._send_message(q)
+    ~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1108, in _send_message
+    response = client._run_operation(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1938, in _run_operation
+    return self._retryable_read(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2048, in _retryable_read
+    return self._retry_internal(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2014, in _retry_internal
+    ).run()
+      ~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2768, in run
+    self._check_last_error()
+    ~~~~~~~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2849, in _check_last_error
+    raise self._last_error
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2763, in run
+    return self._read() if self._is_read else self._write()
+           ~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2924, in _read
+    return self._func(self._session, self._server, conn, read_pref)  # type: ignore
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1929, in _cmd
+    return server.run_operation(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\helpers.py", line 47, in inner
+    return func(*args, **kwargs)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\server.py", line 208, in run_operation
+    reply = conn.receive_message(request_id)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\pool.py", line 454, in receive_message
+    self._raise_connection_failure(error)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\pool.py", line 451, in receive_message
+    return receive_message(self, request_id, self.max_message_size)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\network_layer.py", line 759, in receive_message
+    length, _, response_to, op_code = _UNPACK_HEADER(receive_data(conn, 16, deadline))
+                                                     ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\network_layer.py", line 343, in receive_data
+    wait_for_read(conn, deadline)
+    ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\network_layer.py", line 318, in wait_for_read
+    raise _OperationCancelled("operation cancelled")
+pymongo.errors._OperationCancelled: operation cancelled
+127.0.0.1 - - [26/Apr/2026 21:52:40] "GET /api/bookings/timeslots HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\booking_routes.py", line 125, in get_all_timeslots
+    _, error_response, status_code = require_admin()
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\booking_routes.py", line 22, in require_admin
+    user_email, user = get_current_user()
+                       ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\booking_routes.py", line 17, in get_current_user
+    user = mongo.db.users.find_one({"email": user_email})
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\collection.py", line 1755, in find_one
+    for result in cursor.limit(-1):
+                  ~~~~~~~~~~~~^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1289, in __next__
+    return self.next()
+           ~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1265, in next
+    if len(self._data) or self._refresh():
+                          ~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1213, in _refresh
+    self._send_message(q)
+    ~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1108, in _send_message
+    response = client._run_operation(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1938, in _run_operation
+    return self._retryable_read(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2048, in _retryable_read
+    return self._retry_internal(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2014, in _retry_internal
+    ).run()
+      ~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2763, in run
+    return self._read() if self._is_read else self._write()
+           ~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2908, in _read
+    self._server = self._get_server()
+                   ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2856, in _get_server
+    return self._client._select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 428, in select_server
+    server = self._select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in _select_server
+    servers = self.select_servers(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+    ^
+pymongo.errors.ServerSelectionTimeoutError: ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 69ee35f303836f2e63ad05d7, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+127.0.0.1 - - [26/Apr/2026 21:52:41] "GET /api/bookings/all HTTP/1.1" 500 -
+Traceback (most recent call last):
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1536, in __call__
+    return self.wsgi_app(environ, start_response)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1514, in wsgi_app
+    response = self.handle_exception(e)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 1511, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 919, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_cors\extension.py", line 176, in wrapped_function
+    return cors_after_request(app.make_response(f(*args, **kwargs)))
+                                                ~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 917, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask\app.py", line 902, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)  # type: ignore[no-any-return]
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_jwt_extended\view_decorators.py", line 170, in decorator
+    return current_app.ensure_sync(fn)(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\booking_routes.py", line 350, in get_all_bookings
+    _, error_response, status_code = require_admin()
+                                     ~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\booking_routes.py", line 22, in require_admin
+    user_email, user = get_current_user()
+                       ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\routes\booking_routes.py", line 17, in get_current_user
+    user = mongo.db.users.find_one({"email": user_email})
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\collection.py", line 1755, in find_one
+    for result in cursor.limit(-1):
+                  ~~~~~~~~~~~~^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1289, in __next__
+    return self.next()
+           ~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1265, in next
+    if len(self._data) or self._refresh():
+                          ~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1213, in _refresh
+    self._send_message(q)
+    ~~~~~~~~~~~~~~~~~~^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\cursor.py", line 1108, in _send_message
+    response = client._run_operation(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1938, in _run_operation
+    return self._retryable_read(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2048, in _retryable_read
+    return self._retry_internal(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\_csot.py", line 125, in csot_wrapper
+    return func(self, *args, **kwargs)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2014, in _retry_internal
+    ).run()
+      ~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2763, in run
+    return self._read() if self._is_read else self._write()
+           ~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2908, in _read
+    self._server = self._get_server()
+                   ~~~~~~~~~~~~~~~~^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2856, in _get_server
+    return self._client._select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1833, in _select_server
+    server = topology.select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 428, in select_server
+    server = self._select_server(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 402, in _select_server
+    servers = self.select_servers(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 298, in select_servers
+    server_descriptions = self._select_servers_loop(
+    
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\topology.py", line 359, in _select_servers_loop
+    raise ServerSelectionTimeoutError(
+    ^
+pymongo.errors.ServerSelectionTimeoutError: ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms),ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms), Timeout: 30s, Topology Description: <TopologyDescription id: 69ee35f303836f2e63ad05d7, topology_type: ReplicaSetNoPrimary, servers: [<ServerDescription ('ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=NetworkTimeout('ac-rg2k8ke-shard-00-00.ljisb1w.mongodb.net:27017: timed out (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-rg2k8ke-shard-00-01.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>, <ServerDescription ('ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net', 27017) server_type: Unknown, rtt: None, error=AutoReconnect('ac-rg2k8ke-shard-00-02.ljisb1w.mongodb.net:27017: [Errno 11001] getaddrinfo failed (configured timeouts: socketTimeoutMS: 20000.0ms, connectTimeoutMS: 20000.0ms)')>]>
+127.0.0.1 - - [26/Apr/2026 21:52:47] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:47] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:47] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:47] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:48] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:49] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:49] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:49] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:51] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:51] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:51] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:52] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:53] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:54] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:55] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:52:55] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:16] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:16] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:16] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:16] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:16] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:16] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:17] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:17] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:17] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:19] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:53:19] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:56:32] "GET /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:56:32] "GET /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:56:38] "GET /api/bookings/timeslots/available HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:56:38] "GET /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:56:38] "GET /api/bookings/timeslots/available HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:56:38] "GET /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:15] "POST /api/payments/create HTTP/1.1" 201 -
+127.0.0.1 - - [26/Apr/2026 21:57:25] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:25] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:25] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:25] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:25] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:25] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:26] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:26] "GET /api/bookings/my HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:48] "POST /api/auth/login HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:49] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:49] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:52] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:52] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:52] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:57:53] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:58:00] "DELETE /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 409 -
+127.0.0.1 - - [26/Apr/2026 21:58:08] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:58:08] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:58:38] "DELETE /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 409 -
+127.0.0.1 - - [26/Apr/2026 21:58:40] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:58:41] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:58:41] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:58:41] "GET /api/bookings/all HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:58:47] "DELETE /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 409 -
+127.0.0.1 - - [26/Apr/2026 21:59:23] "DELETE /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 409 -
+127.0.0.1 - - [26/Apr/2026 21:59:34] "DELETE /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 409 -
+127.0.0.1 - - [26/Apr/2026 21:59:36] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:59:36] "GET /api/services/ HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:59:42] "DELETE /api/services/69ee427203836f2e63ad05d8 HTTP/1.1" 409 -
+127.0.0.1 - - [26/Apr/2026 21:59:45] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+127.0.0.1 - - [26/Apr/2026 21:59:45] "GET /api/bookings/timeslots HTTP/1.1" 200 -
+ * Detected change in 'C:\\Users\\user\\VS Codes\\Planora Iteration2\\Backend\\routes\\service_routes.py', reloading
+Exception in thread Thread-1 (serve_forever):
+Traceback (most recent call last):
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 1043, in _bootstrap_inner
+    self.run()
+    ~~~~~~~~^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\threading.py", line 994, in run
+    self._target(*self._args, **self._kwargs)
+    ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\werkzeug\serving.py", line 819, in serve_forever
+    super().serve_forever(poll_interval=poll_interval)
+    ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\socketserver.py", line 235, in serve_forever
+    ready = selector.select(poll_interval)
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 314, in select
+    r, w, _ = self._select(self._readers, self._writers, [], timeout)
+              ~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\AppData\Local\Programs\Python\Python313\Lib\selectors.py", line 305, in _select
+    r, w, x = select.select(r, w, w, timeout)
+              ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+OSError: [WinError 10038] An operation was attempted on something that is not a socket
+ * Restarting with stat
+Traceback (most recent call last):
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\srv_resolver.py", line 108, in _resolve_uri
+    results = _resolve(
+        "_" + self.__srv + "._tcp." + self.__fqdn, "SRV", lifetime=self.__connect_timeout
+    )
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\srv_resolver.py", line 53, in _resolve
+    return resolver.resolve(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\dns\resolver.py", line 1572, in resolve
+    return get_default_resolver().resolve(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        qname,
+        ^^^^^^
+    ...<7 lines>...
+        search,
+        ^^^^^^^
+    )
+    ^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\dns\resolver.py", line 1328, in resolve
+    timeout = self._compute_timeout(start, lifetime, resolution.errors)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\dns\resolver.py", line 1084, in _compute_timeout
+    raise LifetimeTimeout(timeout=duration, errors=errors)
+dns.resolver.LifetimeTimeout: The resolution lifetime expired after 21.196 seconds: Server Do53:192.168.100.1@53 answered SERVFAIL; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\app.py", line 27, in <module>
+    app = create_app()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\app.py", line 11, in create_app
+    mongo.init_app(app)
+    ~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\flask_pymongo\__init__.py", line 109, in init_app
+    parsed_uri = uri_parser.parse_uri(uri)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\uri_parser.py", line 109, in parse_uri
+    _parse_srv(
+    ~~~~~~~~~~^
+        uri,
+        ^^^^
+    ...<6 lines>...
+        srv_max_hosts,
+        ^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\uri_parser.py", line 168, in _parse_srv
+    nodes = dns_resolver.get_hosts()
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\srv_resolver.py", line 148, in get_hosts
+    _, nodes = self._get_srv_response_and_hosts(True)
+               ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\srv_resolver.py", line 122, in _get_srv_response_and_hosts
+    results = self._resolve_uri(encapsulate_errors)
+  File "C:\Users\user\VS Codes\Planora Iteration2\Backend\venv\Lib\site-packages\pymongo\synchronous\srv_resolver.py", line 116, in _resolve_uri
+    raise ConfigurationError(str(exc)) from exc
+pymongo.errors.ConfigurationError: The resolution lifetime expired after 21.196 seconds: Server Do53:192.168.100.1@53 answered SERVFAIL; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.; Server Do53:192.168.8.1@53 answered The DNS operation timed out.

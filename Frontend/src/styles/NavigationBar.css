@@ -1,0 +1,360 @@
+/* ============================================
+   PLANORA STUDIO — NAVIGATION BAR
+   Modern, clean, professional | Pink theme
+   ============================================ */
+
+/* ── Google Font variables ─────────────────── */
+:root {
+  --nav-font: 'Poppins', 'Inter', system-ui, sans-serif;
+  --logo-font-serif: 'Abril Fatface', serif;
+  --logo-font-script: 'Great Vibes', cursive;
+  --crimson: #b71c1c;
+  --crimson-light: rgba(183, 28, 28, 0.08);
+  --pink-lite: rgba(255, 182, 193, 0.12);
+  --nav-height: 72px;
+  --nav-bg: rgba(255, 255, 255, 0.97);
+  --nav-border: rgba(255, 182, 193, 0.25);
+  --nav-shadow: 0 2px 16px rgba(180, 80, 100, 0.08);
+  --nav-shadow-scrolled: 0 4px 24px rgba(180, 80, 100, 0.14);
+  --nav-text: #4a4a4a;
+  --nav-text-muted: #7a7a7a;
+  --nav-active: #b71c1c;
+  --nav-transition: 220ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* ── Base ──────────────────────────────────── */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 200;
+  background: var(--nav-bg);
+  border-bottom: 1px solid var(--nav-border);
+  box-shadow: var(--nav-shadow);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  transition: box-shadow var(--nav-transition), background var(--nav-transition);
+}
+
+.navbar--scrolled {
+  background: rgba(255, 255, 255, 0.99);
+  box-shadow: var(--nav-shadow-scrolled);
+}
+
+/* ── Container ─────────────────────────────── */
+.navbar-container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 32px;
+  height: var(--nav-height);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+/* ── Logo ──────────────────────────────────── */
+.planora-logo {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  line-height: 1;
+  cursor: pointer;
+  user-select: none;
+  flex-shrink: 0;
+  transition: transform var(--nav-transition), opacity var(--nav-transition);
+  gap: 0;
+}
+
+.planora-logo:hover {
+  transform: translateY(-1px);
+  opacity: 0.88;
+}
+
+.planora-year {
+  font-family: var(--nav-font);
+  font-size: 9px;
+  font-weight: 600;
+  letter-spacing: 3px;
+  color: var(--crimson);
+  text-transform: uppercase;
+  opacity: 0.85;
+  margin-bottom: 1px;
+  line-height: 1;
+}
+
+.planora-main {
+  font-family: var(--logo-font-serif);
+  font-size: 30px;
+  color: var(--crimson);
+  line-height: 0.92;
+  display: block;
+  letter-spacing: -0.5px;
+}
+
+.planora-sub {
+  font-family: var(--logo-font-script);
+  font-size: 26px;
+  color: var(--crimson);
+  line-height: 0.9;
+  display: block;
+  margin-top: -4px;
+  margin-left: 18px; /* offset to the right, mimicking screenshot */
+}
+
+/* ── Nav Items ─────────────────────────────── */
+.navbar-nav {
+  display: flex;
+  align-items: center;
+  gap: 4px;  /* tight gap; padding on buttons handles visual spacing */
+  flex-shrink: 0;
+}
+
+/* Hamburger hidden on desktop */
+.navbar-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  border-radius: 10px;
+  padding: 8px;
+  transition: background var(--nav-transition);
+  flex-shrink: 0;
+  gap: 5px;
+}
+
+.navbar-burger:hover {
+  background: var(--pink-lite);
+}
+
+.navbar-burger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--nav-text);
+  border-radius: 2px;
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+
+.navbar-burger.open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+.navbar-burger.open span:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.navbar-burger.open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* ── Nav Link (base) ───────────────────────── */
+.navbar-link {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 16px;
+  background: transparent;
+  border: none;
+  color: var(--nav-text-muted);
+  font-size: 14px;
+  font-weight: 500;
+  font-family: var(--nav-font);
+  letter-spacing: 0.2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: color var(--nav-transition), background var(--nav-transition);
+  white-space: nowrap;
+}
+
+/* Underline bar animation */
+.navbar-link::after {
+  content: '';
+  position: absolute;
+  bottom: 4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 2px;
+  background: var(--crimson);
+  border-radius: 2px;
+  transition: width var(--nav-transition);
+}
+
+.navbar-link:hover {
+  color: var(--nav-active);
+  background: var(--crimson-light);
+}
+
+.navbar-link:hover::after {
+  width: calc(100% - 32px);
+}
+
+/* ── Active state ──────────────────────────── */
+.navbar-link--active {
+  color: var(--crimson) !important;
+  font-weight: 600;
+  background: var(--crimson-light);
+}
+
+.navbar-link--active::after {
+  width: calc(100% - 32px) !important;
+}
+
+/* ── Logout button ─────────────────────────── */
+.navbar-link--logout {
+  color: var(--crimson) !important;
+  border: 1.5px solid var(--crimson);
+  border-radius: 20px;
+  padding: 6px 18px;
+  font-weight: 600;
+  background: transparent;
+  margin-left: 8px;
+  transition: background var(--nav-transition), color var(--nav-transition),
+    box-shadow var(--nav-transition), transform var(--nav-transition);
+}
+
+.navbar-link--logout::after {
+  display: none; /* no underline for logout */
+}
+
+.navbar-link--logout:hover {
+  background: var(--crimson) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 12px rgba(183, 28, 28, 0.22);
+  transform: translateY(-1px);
+}
+
+/* ── Right section (greeting) ──────────────── */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-shrink: 0;
+  padding-left: 16px;
+  border-left: 1px solid var(--nav-border);
+}
+
+.navbar-user-name {
+  font-size: 13px;
+  font-weight: 500;
+  font-family: var(--nav-font);
+  color: var(--nav-text-muted);
+  white-space: nowrap;
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE — Tablet (≤1024px)
+   ─────────────────────────────────────────── */
+@media (max-width: 1024px) {
+  .navbar-container {
+    padding: 0 20px;
+  }
+
+  .navbar-link {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE — Mobile (≤768px)
+   Hamburger menu revealed, nav collapses
+   ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .navbar-container {
+    padding: 0 16px;
+    height: 64px;
+    position: relative;
+  }
+
+  /* Show hamburger */
+  .navbar-burger {
+    display: flex;
+    order: 3;
+  }
+
+  /* Hide greeting on mobile */
+  .navbar-right {
+    display: none;
+  }
+
+  /* Nav collapses — hidden by default */
+  .navbar-nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    right: 12px;
+    width: 220px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 2px;
+    background: rgba(255, 255, 255, 0.99);
+    border: 1px solid var(--nav-border);
+    border-radius: 14px;
+    box-shadow: 0 8px 32px rgba(180, 80, 100, 0.14);
+    padding: 10px;
+    animation: slideInDown 180ms ease-out both;
+    z-index: 300;
+  }
+
+  /* Show when open */
+  .navbar-nav--open {
+    display: flex;
+  }
+
+  .navbar-link {
+    width: 100%;
+    text-align: left;
+    padding: 11px 16px;
+    border-radius: 10px;
+    font-size: 14px;
+  }
+
+  .navbar-link::after {
+    display: none; /* no underline in dropdown */
+  }
+
+  .navbar-link--logout {
+    border-radius: 10px;
+    margin-left: 0;
+    margin-top: 4px;
+    justify-content: center;
+    text-align: center;
+  }
+
+  /* Subtle divider before logout in mobile menu */
+  .navbar-link--logout::before {
+    display: none;
+  }
+}
+
+/* ─────────────────────────────────────────────
+   RESPONSIVE — Small mobile (≤480px)
+   ─────────────────────────────────────────── */
+@media (max-width: 480px) {
+  .planora-main {
+    font-size: 24px;
+  }
+
+  .planora-sub {
+    font-size: 20px;
+  }
+
+  .navbar-nav {
+    right: 8px;
+    width: calc(100vw - 32px);
+  }
+}
+
+/* ─────────────────────────────────────────────
+   SHARED — Admin header logo tokens reuse
+   These ensure the .planora-logo classes work
+   inside .admin-header too
+   ─────────────────────────────────────────── */
+.admin-header .planora-logo {
+  cursor: pointer;
+}

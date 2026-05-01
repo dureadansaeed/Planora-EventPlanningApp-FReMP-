@@ -1,0 +1,281 @@
+/* ============================================
+   MODERN FORM STYLING
+   ============================================ */
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-lg);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-label {
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-text-primary);
+}
+
+.form-label-required::after {
+  content: '*';
+  color: var(--color-error);
+  margin-left: var(--spacing-xs);
+}
+
+/* Input Field */
+.form-input,
+.form-textarea,
+.form-select {
+  width: 100%;
+  padding: var(--spacing-lg) var(--spacing-md);
+  font-size: var(--font-size-base);
+  font-family: var(--font-family-primary);
+  border: 1px solid rgba(255, 182, 193, 0.25);
+  border-radius: var(--radius-md);
+  background: var(--color-white);
+  color: var(--color-text-primary);
+  transition: all var(--transition-base);
+  box-sizing: border-box;
+}
+
+.form-input::placeholder,
+.form-textarea::placeholder {
+  color: var(--color-text-light);
+}
+
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(255, 182, 193, 0.1);
+}
+
+.form-input:disabled,
+.form-textarea:disabled,
+.form-select:disabled {
+  background: var(--color-bg-light);
+  color: var(--color-text-light);
+  cursor: not-allowed;
+}
+
+.form-textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+/* Input Error State */
+.form-input.error,
+.form-textarea.error,
+.form-select.error {
+  border-color: var(--color-error);
+}
+
+.form-input.error:focus,
+.form-textarea.error:focus,
+.form-select.error:focus {
+  box-shadow: 0 0 0 3px rgba(255, 107, 107, 0.1);
+}
+
+.form-error {
+  font-size: var(--font-size-sm);
+  color: var(--color-error);
+  margin-top: var(--spacing-xs);
+}
+
+.form-help {
+  font-size: var(--font-size-xs);
+  color: var(--color-text-light);
+  margin-top: var(--spacing-xs);
+}
+
+/* Input Success State */
+.form-input.success,
+.form-textarea.success,
+.form-select.success {
+  border-color: var(--color-success);
+}
+
+.form-input.success:focus,
+.form-textarea.success:focus,
+.form-select.success:focus {
+  box-shadow: 0 0 0 3px rgba(67, 200, 120, 0.1);
+}
+
+/* Checkbox & Radio */
+.form-checkbox,
+.form-radio {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--color-primary);
+}
+
+.form-checkbox-group,
+.form-radio-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.form-checkbox-item,
+.form-radio-item {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-md);
+  cursor: pointer;
+}
+
+.form-checkbox-item label,
+.form-radio-item label {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* Toggle Switch */
+.form-toggle {
+  position: relative;
+  display: inline-block;
+  width: 50px;
+  height: 26px;
+}
+
+.form-toggle input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: color var(--transition-base);
+  border-radius: var(--radius-full);
+}
+
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 20px;
+  width: 20px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: var(--transition-base);
+  border-radius: var(--radius-full);
+}
+
+.form-toggle input:checked + .toggle-slider {
+  background-color: var(--color-primary);
+}
+
+.form-toggle input:checked + .toggle-slider:before {
+  transform: translateX(24px);
+}
+
+/* Form Row (for side-by-side inputs) */
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.form-row-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+/* Form Actions */
+.form-actions {
+  display: flex;
+  gap: var(--spacing-lg);
+  margin-top: var(--spacing-2xl);
+  flex-wrap: wrap;
+}
+
+.form-actions-primary {
+  flex: 1;
+  min-width: 150px;
+}
+
+.form-actions-secondary {
+  min-width: 150px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .form-actions {
+    flex-direction: column;
+  }
+
+  .form-actions-primary,
+  .form-actions-secondary {
+    width: 100%;
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: 16px; /* Prevents iOS zoom on input focus */
+  }
+}
+
+/* Loading State */
+.form-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.form-loading input,
+.form-loading textarea,
+.form-loading select,
+.form-loading button {
+  cursor: not-allowed;
+}
+
+/* Form Validation Toast */
+.form-toast {
+  position: fixed;
+  bottom: var(--spacing-lg);
+  right: var(--spacing-lg);
+  padding: var(--spacing-lg);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  z-index: 1000;
+  animation: slideInRight var(--transition-base) ease-out;
+  max-width: 400px;
+}
+
+.form-toast.success {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+  color: white;
+}
+
+.form-toast.error {
+  background: linear-gradient(135deg, #FF6B6B, #ff8787);
+  color: white;
+}
+
+.form-toast.warning {
+  background: linear-gradient(135deg, #ffa502, #ff8c00);
+  color: white;
+}
+
+.form-toast.info {
+  background: linear-gradient(135deg, #2196F3, #1976D2);
+  color: white;
+}

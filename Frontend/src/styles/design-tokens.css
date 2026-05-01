@@ -1,0 +1,353 @@
+/* ============================================
+   PLANORA DESIGN SYSTEM & TOKENS
+   ============================================ */
+
+/* Color Palette */
+:root {
+  /* Primary Colors */
+  --color-primary: #FFB6C1;           /* Soft light pink */
+  --color-primary-dark: #E8B4D5;      /* Slightly darker pink */
+  --color-primary-light: #FFD4E5;     /* Lighter pink for backgrounds */
+  
+  /* Neutral Colors */
+  --color-white: #FFFFFF;
+  --color-bg-light: #FFF5F7;          /* Very light pink background */
+  --color-bg-lighter: #FFF0F5;        /* Even lighter background */
+  --color-bg-accent: #F5F0FF;         /* Light purple accent */
+  
+  /* Text Colors */
+  --color-text-primary: #4A4A4A;      /* Dark gray for main text */
+  --color-text-secondary: #6B6B6B;    /* Medium gray for secondary text */
+  --color-text-light: #8B8B8B;        /* Light gray for muted text */
+  --color-text-inverse: #FFFFFF;      /* White text on dark backgrounds */
+  
+  /* Status Colors */
+  --color-success: #43c878;
+  --color-warning: #FF9800;
+  --color-error: #FF6B6B;
+  --color-info: #2196F3;
+  
+  /* Shadow System */
+  --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-sm: 0 2px 4px rgba(0, 0, 0, 0.08);
+  --shadow-md: 0 4px 8px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 8px 16px rgba(0, 0, 0, 0.15);
+  --shadow-xl: 0 12px 24px rgba(0, 0, 0, 0.18);
+  --shadow-2xl: 0 20px 40px rgba(0, 0, 0, 0.20);
+  
+  /* Blur Effect */
+  --backdrop-blur: blur(12px);
+  
+  /* Border Radius */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-2xl: 24px;
+  --radius-3xl: 32px;
+  --radius-full: 9999px;
+  
+  /* Typography */
+  --font-family-primary: 'Poppins', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  --font-family-script: 'Abril Fatface', 'Playfair Display', serif;
+  
+  --font-size-xs: 12px;
+  --font-size-sm: 14px;
+  --font-size-base: 16px;
+  --font-size-lg: 18px;
+  --font-size-xl: 20px;
+  --font-size-2xl: 24px;
+  --font-size-3xl: 28px;
+  --font-size-4xl: 32px;
+  --font-size-5xl: 36px;
+  
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* Line Height */
+  --line-height-tight: 1.2;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* Spacing System */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 12px;
+  --spacing-lg: 16px;
+  --spacing-xl: 20px;
+  --spacing-2xl: 24px;
+  --spacing-3xl: 32px;
+  --spacing-4xl: 40px;
+  --spacing-5xl: 48px;
+  
+  /* Transitions */
+  --transition-fast: 150ms ease-in-out;
+  --transition-base: 200ms ease-in-out;
+  --transition-slow: 300ms ease-in-out;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+/* Text Utilities */
+.text-primary {
+  color: var(--color-text-primary);
+}
+
+.text-secondary {
+  color: var(--color-text-secondary);
+}
+
+.text-light {
+  color: var(--color-text-light);
+}
+
+/* Background Utilities */
+.bg-light {
+  background-color: var(--color-bg-light);
+}
+
+.bg-white {
+  background-color: var(--color-white);
+}
+
+/* Rounded Utilities */
+.rounded-sm {
+  border-radius: var(--radius-sm);
+}
+
+.rounded-md {
+  border-radius: var(--radius-md);
+}
+
+.rounded-lg {
+  border-radius: var(--radius-lg);
+}
+
+.rounded-xl {
+  border-radius: var(--radius-xl);
+}
+
+.rounded-2xl {
+  border-radius: var(--radius-2xl);
+}
+
+.rounded-3xl {
+  border-radius: var(--radius-3xl);
+}
+
+.rounded-full {
+  border-radius: var(--radius-full);
+}
+
+/* Box Shadow Utilities */
+.shadow-sm {
+  box-shadow: var(--shadow-sm);
+}
+
+.shadow-md {
+  box-shadow: var(--shadow-md);
+}
+
+.shadow-lg {
+  box-shadow: var(--shadow-lg);
+}
+
+.shadow-xl {
+  box-shadow: var(--shadow-xl);
+}
+
+/* Flex Utilities */
+.flex {
+  display: flex;
+}
+
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gap-sm {
+  gap: var(--spacing-sm);
+}
+
+.gap-md {
+  gap: var(--spacing-md);
+}
+
+.gap-lg {
+  gap: var(--spacing-lg);
+}
+
+/* Padding Utilities */
+.p-md {
+  padding: var(--spacing-md);
+}
+
+.p-lg {
+  padding: var(--spacing-lg);
+}
+
+.p-xl {
+  padding: var(--spacing-xl);
+}
+
+.px-md {
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+.px-lg {
+  padding-left: var(--spacing-lg);
+  padding-right: var(--spacing-lg);
+}
+
+.py-md {
+  padding-top: var(--spacing-md);
+  padding-bottom: var(--spacing-md);
+}
+
+.py-lg {
+  padding-top: var(--spacing-lg);
+  padding-bottom: var(--spacing-lg);
+}
+
+/* ============================================
+   COMPONENT TOKENS
+   ============================================ */
+
+/* Button Tokens */
+--btn-primary-bg: var(--color-primary);
+--btn-primary-bg-hover: var(--color-primary-dark);
+--btn-primary-text: var(--color-text-inverse);
+--btn-primary-padding: var(--spacing-md) var(--spacing-xl);
+--btn-primary-radius: var(--radius-xl);
+--btn-primary-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
+
+/* Card Tokens */
+--card-bg: rgba(255, 255, 255, 0.95);
+--card-border-radius: var(--radius-lg);
+--card-shadow: var(--shadow-md);
+--card-padding: var(--spacing-xl);
+
+/* Input Tokens */
+--input-bg: var(--color-white);
+--input-border: 1px solid rgba(255, 182, 193, 0.25);
+--input-border-focus: 1px solid rgba(255, 182, 193, 0.8);
+--input-radius: var(--radius-md);
+--input-padding: var(--spacing-md) var(--spacing-lg);
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideInUp {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInRight {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes bounce-soft {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+@keyframes glow {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(255, 182, 193, 0.7);
+  }
+  50% {
+    box-shadow: 0 0 0 6px rgba(255, 182, 193, 0);
+  }
+}
+
+/* Animation Classes */
+.animate-fadeIn {
+  animation: fadeIn var(--transition-base) ease-in;
+}
+
+.animate-slideInUp {
+  animation: slideInUp var(--transition-base) ease-out;
+}
+
+.animate-slideInDown {
+  animation: slideInDown var(--transition-base) ease-out;
+}
+
+.animate-slideInLeft {
+  animation: slideInLeft var(--transition-base) ease-out;
+}
+
+.animate-slideInRight {
+  animation: slideInRight var(--transition-base) ease-out;
+}
+
+.animate-bounce-soft {
+  animation: bounce-soft 2s ease-in-out infinite;
+}
+
+.animate-glow {
+  animation: glow 2s infinite;
+}
