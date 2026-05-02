@@ -126,8 +126,7 @@ Planora/
 
 ### 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/planora.git
-cd planora
+git clone https://github.com/yourusername/planora.git](https://github.com/ritaj-suleman/Planora-EventPlanningApp-FReMP-.git
 ```
 
 ### 2. Backend Setup
