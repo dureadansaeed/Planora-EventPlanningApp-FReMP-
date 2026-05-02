@@ -6,7 +6,8 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:5000',
+        // target: 'http://localhost:5000', // local backend (commented out)
+        target: 'https://planorabackend.onrender.com',
         changeOrigin: true,
       }
     }
