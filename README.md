@@ -1,10 +1,10 @@
-# 🌸 Planora — Event Management Web Application
+#  Planora — Event Management Web Application
 
 > A full-stack event management platform that connects users with professional event planning services. Users can browse services, make bookings, and process payments — while admins manage the entire platform from a dedicated dashboard.
 
 ---
 
-## 📸 Preview
+##  Preview
 
 | User Dashboard | Services Page | Admin Bookings |
 |---|---|---|
@@ -12,7 +12,7 @@
 
 ---
 
-## 🚀 Tech Stack
+##  Tech Stack
 
 ### Frontend
 ![React](https://img.shields.io/badge/React-18-61DAFB?style=flat&logo=react)
@@ -29,9 +29,9 @@
 
 ---
 
-## ✨ Features
+##  Features
 
-### 👤 User Side
+###  User Side
 - **Authentication** — Register, login with JWT, Remember Me (30 day session)
 - **Services** — Browse all event services with images, pricing and details
 - **Service Detail** — View full service info before booking
@@ -40,7 +40,7 @@
 - **Booking Confirmation** — Receipt page with downloadable confirmation
 - **Booking History** — View all personal bookings split into upcoming and past with status badges
 
-### 🔐 Admin Side
+###  Admin Side
 - **Dashboard** — Live stats: total bookings, pending, approved, revenue
 - **Booking Oversight** — View all bookings, filter by status, search by user or service, approve or reject with automatic email to user
 - **Service Management** — Add, edit, delete services with image URL support
@@ -49,7 +49,7 @@
 
 ---
 
-## 🗂️ Project Structure
+##  Project Structure
 
 ```
 Planora/
@@ -98,7 +98,7 @@ Planora/
 
 ---
 
-## 🗄️ Database Design
+##  Database Design
 
 **MongoDB Atlas — `planora_db`**
 
@@ -117,7 +117,7 @@ Planora/
 
 ---
 
-## ⚙️ Installation & Setup
+##  Installation & Setup
 
 ### Prerequisites
 - Node.js v18+
@@ -172,7 +172,7 @@ http://localhost:5173
 
 ---
 
-## 🔑 Environment Variables
+##  Environment Variables
 
 | Variable | Description |
 |---|---|
@@ -185,7 +185,7 @@ http://localhost:5173
 
 ---
 
-## 📡 API Routes
+##  API Routes
 
 ### Auth
 | Method | Route | Description |
@@ -230,7 +230,7 @@ http://localhost:5173
 
 ---
 
-## 🔄 User Flow
+##  User Flow
 
 ```
 Register / Login
@@ -254,7 +254,7 @@ User Receives Confirmation Email
 
 ---
 
-## 🛡️ Security
+##  Security
 
 - Passwords hashed with **bcrypt** — never stored as plain text
 - Authentication via **JWT tokens** — stateless and secure
@@ -265,7 +265,7 @@ User Receives Confirmation Email
 
 ---
 
-## 📦 Dependencies
+##  Dependencies
 
 ### Backend
 ```
@@ -289,7 +289,7 @@ vite
 
 ---
 
-## 👥 Team
+##  Team
 
 | Role | Responsibility |
 |---|---|
@@ -299,7 +299,7 @@ vite
 
 ---
 
-## 📋 Development Iterations
+##  Development Iterations
 
 **Iteration 1 — Core Platform**
 User authentication, services display, admin dashboard foundation
@@ -312,12 +312,8 @@ Service management, time slot management, booking history, booking oversight, re
 
 ---
 
-## 📄 License
+##  License
 
 This project was developed as a university project for educational purposes.
 
----
 
-<div align="center">
-  Made with ❤️ using React, Flask and MongoDB
-</div>
