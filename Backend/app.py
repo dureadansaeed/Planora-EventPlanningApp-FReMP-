@@ -6,6 +6,15 @@ from flask_cors import CORS
 def create_app():
     app = Flask(__name__)
     app.config.from_object(Config)
+    
+    #added because of CORS error when trying to access backend from frontend
+    @app.route("/")
+    def home():
+        return {"message": "Planora Backend is running 🚀"}
+
+    CORS(app, origins=["http://localhost:5173"])
+    
+    
     CORS(app, origins=["http://localhost:5173"])
 
     mongo.init_app(app)
