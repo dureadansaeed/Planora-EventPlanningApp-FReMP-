@@ -228,25 +228,29 @@
    ============================================ */
 
 /* Button Tokens */
---btn-primary-bg: var(--color-primary);
---btn-primary-bg-hover: var(--color-primary-dark);
---btn-primary-text: var(--color-text-inverse);
---btn-primary-padding: var(--spacing-md) var(--spacing-xl);
---btn-primary-radius: var(--radius-xl);
---btn-primary-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
+/* Button / Component Tokens */
+:root {
+  /* Button Tokens */
+  --btn-primary-bg: var(--color-primary);
+  --btn-primary-bg-hover: var(--color-primary-dark);
+  --btn-primary-text: var(--color-text-inverse);
+  --btn-primary-padding: var(--spacing-md) var(--spacing-xl);
+  --btn-primary-radius: var(--radius-xl);
+  --btn-primary-shadow: 0 4px 12px rgba(255, 182, 193, 0.3);
 
-/* Card Tokens */
---card-bg: rgba(255, 255, 255, 0.95);
---card-border-radius: var(--radius-lg);
---card-shadow: var(--shadow-md);
---card-padding: var(--spacing-xl);
+  /* Card Tokens */
+  --card-bg: rgba(255, 255, 255, 0.95);
+  --card-border-radius: var(--radius-lg);
+  --card-shadow: var(--shadow-md);
+  --card-padding: var(--spacing-xl);
 
-/* Input Tokens */
---input-bg: var(--color-white);
---input-border: 1px solid rgba(255, 182, 193, 0.25);
---input-border-focus: 1px solid rgba(255, 182, 193, 0.8);
---input-radius: var(--radius-md);
---input-padding: var(--spacing-md) var(--spacing-lg);
+  /* Input Tokens */
+  --input-bg: var(--color-white);
+  --input-border: 1px solid rgba(255, 182, 193, 0.25);
+  --input-border-focus: 1px solid rgba(255, 182, 193, 0.8);
+  --input-radius: var(--radius-md);
+  --input-padding: var(--spacing-md) var(--spacing-lg);
+}
 
 /* ============================================
    ANIMATIONS
