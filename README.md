@@ -155,7 +155,7 @@ Start the backend:
 ```bash
 python app.py
 ```
-Backend runs on **http://localhost:5000**
+Backend (deployed) is available at **https://planorabackend.onrender.com**
 
 ### 3. Frontend Setup
 ```bash
@@ -163,11 +163,11 @@ cd Frontend
 npm install
 npm run dev
 ```
-Frontend runs on **http://localhost:5173**
+Frontend (deployed) is available at **https://planora-event-planning-app-f-re-mp.vercel.app**
 
 ### 4. Open in browser
 ```
-http://localhost:5173
+https://planora-event-planning-app-f-re-mp.vercel.app
 ```
 
 ---
