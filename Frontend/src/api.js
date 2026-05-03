@@ -1,4 +1,6 @@
-const BASE = import.meta.env.VITE_API_URL || '/api';
+// Default to deployed backend if no VITE_API_URL is provided at build time.
+const DEFAULT_API = 'https://planorabackend.onrender.com/api';
+const BASE = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? DEFAULT_API : '/api');
 
 function getAuthHeaders(includeJson = false) {
     const token = localStorage.getItem('token');
@@ -20,12 +22,19 @@ async function parseResponse(res) {
 }
 
 export async function loginUser(email, password) {
-    const res = await fetch(`${BASE}/auth/login`, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ email, password }),
-    });
-    return parseResponse(res);
+    try {
+        const res = await fetch(`${BASE}/auth/login`, {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ email, password }),
+        });
+        return await parseResponse(res);
+    } catch (err) {
+        // Network or parsing error
+        const error = new Error('Login request failed');
+        error.cause = err;
+        throw error;
+    }
 }
 
 export async function registerUser(name, email, number, password) {
