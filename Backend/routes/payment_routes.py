@@ -2,6 +2,7 @@ from flask import Blueprint, jsonify, request
 from flask_jwt_extended import jwt_required, get_jwt_identity
 from extensions import mongo
 import datetime
+import re
 import random
 import string
 from bson import ObjectId
@@ -136,15 +137,28 @@ def process_payment():
         if not all([service_id, event_date, event_time, contact_number]):
             return jsonify({"error": "Missing booking details"}), 400
 
-        slot = mongo.db.timeslots.find_one({"date": event_date, "is_active": True})
+        # Normalize incoming date/time formats
+        if isinstance(event_date, str) and 'T' in event_date:
+            event_date = event_date.split('T')[0]
+        try:
+            parsed_event_date = datetime.datetime.strptime(str(event_date), "%Y-%m-%d").date()
+            event_date_iso = parsed_event_date.isoformat()
+        except Exception:
+            return jsonify({"error": "Invalid event_date format. Use YYYY-MM-DD."}), 400
+
+        slot = mongo.db.timeslots.find_one({"date": event_date_iso, "is_active": True})
         if not slot:
             return jsonify({"error": "Selected date is no longer available"}), 409
 
         valid_times = normalize_times(slot.get("times", []))
-        if event_time not in valid_times:
+        norm_valid = {re.sub(r"\s+","",t).lower(): t for t in valid_times}
+        matched_key = re.sub(r"\s+","",str(event_time)).lower()
+        if matched_key not in norm_valid:
             return jsonify({"error": "Selected time is not configured for this date"}), 409
 
-        if event_time in get_booked_times_for_date(event_date):
+        canonical_time = norm_valid[matched_key]
+        booked_keys = {re.sub(r"\s+","",t).lower() for t in get_booked_times_for_date(event_date_iso)}
+        if matched_key in booked_keys:
             return jsonify({"error": "Selected time has already been booked"}), 409
 
         try:
@@ -166,8 +180,8 @@ def process_payment():
             "service_id": service_id,
             "service_snapshot": build_service_snapshot(service),
             "service_deleted": False,
-            "event_date": event_date,
-            "event_time": event_time,
+            "event_date": event_date_iso,
+            "event_time": canonical_time,
             "event_theme": data.get("event_theme", ""),
             "event_location": data.get("event_location", ""),
             "contact_number": contact_number,
