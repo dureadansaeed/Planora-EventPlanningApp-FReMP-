@@ -35,6 +35,14 @@ def create_app():
     app.register_blueprint(booking_bp, url_prefix="/api/bookings")  
     app.register_blueprint(payment_bp, url_prefix="/api/payments")
 
+    # Print registered routes to logs for debugging in production
+    try:
+        print("Registered routes:")
+        for rule in sorted(app.url_map.iter_rules(), key=lambda r: (r.rule, r.methods)):
+            print(f"{rule.rule} -> methods={sorted(rule.methods)} endpoint={rule.endpoint}")
+    except Exception:
+        pass
+
     return app
 
 app = create_app()
