@@ -10,12 +10,16 @@ def create_app():
     #added because of CORS error when trying to access backend from frontend
     @app.route("/")
     def home():
-        return {"message": "Planora Backend is running 🚀"}
+        return {"message": "Planora Backend is running successfully!"}
 
-    CORS(app, origins=["http://localhost:5173"])
-    
-    
-    CORS(app, origins=["http://localhost:5173"])
+    #CORS(app, origins=["http://localhost:5173"])
+   # CORS(app, origins=["http://localhost:5173"])
+   
+   #added this to make it work on both local and deployed frontend
+    CORS(app, origins=[
+    "http://localhost:5173",
+    "https://planora-event-planning-app-f-re-mp.vercel.app"
+])
 
     mongo.init_app(app)
     jwt.init_app(app)
